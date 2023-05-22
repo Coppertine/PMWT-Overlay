@@ -1,6 +1,7 @@
 PMWT Steaming Overlay
 -----------------------
 Designed by cloudical / Coppertine
+
 Developed by Coppertine using parts from lil onion, Hoaq and VictimCrasher's overlays.
 
 
@@ -21,7 +22,7 @@ Navigation
 A lot of the scenes will be controlled from the OBS scenes on the left and are mostly self explanitory, however there are no timers in this overlay.
 (cuz lazy)
 
-Go to Tournament Client to show the main tournament match.
-Go to Showcase if you are doing mappool showcases (this only works for a osu! resolution of 1280 x 720)
-Go to Seeding if you want to do lazer... why?
-Any others will show the text and an icon as an intermission scene.
+- Go to Tournament Client to show the main tournament match.
+- Go to Showcase if you are doing mappool showcases (this only works for a osu! resolution of 1280 x 720)
+- Go to Seeding if you want to do lazer... why?
+- Any others will show the text and an icon as an intermission scene.
