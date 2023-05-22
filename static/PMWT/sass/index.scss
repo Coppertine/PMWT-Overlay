@@ -1,0 +1,85 @@
+$sceneWidth: 1920px;
+$sceneHeight: 1080px;
+
+@use 'fonts';
+@use 'colours';
+
+@use 'chat';
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+}
+
+
+.mainScreen {
+    width: $sceneWidth;
+    height: $sceneHeight;
+    position: relative;
+    overflow: hidden;
+}
+
+.gameplayScene {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.controlPanel {
+    position: absolute;
+    left: $sceneWidth; 
+    top: 0px;
+    width: 213px; 
+    height: $sceneHeight;
+    background-color: black;
+    
+    .btn {
+        appearance: none;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: colours.$buttonColour;
+        border-radius: 30px;
+        width: 150px;
+        color: black;
+        margin: 5px;
+        padding: 5px;
+        font-size: 16px;
+        height: 45px;
+        font-family: 'PASTI';
+        font-weight: normal;
+        font-style: normal;
+
+        &:hover {
+            background-color: black;
+            color: colours.$buttonColour;
+            cursor: pointer;
+        }
+    }
+
+    .pickBans {
+        display:none;
+    }
+}
+
+#particles-js {    
+  position: absolute;
+    width: $sceneWidth;
+    height: $sceneHeight;
+    top: 0;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+    mix-blend-mode: screen;
+}
+
+
+

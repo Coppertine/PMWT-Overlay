@@ -1,0 +1,51 @@
+#chatBox {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+    width: 856px;
+    height: 150px;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 5px 12px;
+    transition: ease-in-out 500ms;
+}
+
+
+.chatMessage {
+    display: flex;
+    text-align: left;
+    font-family: 'PASTI';
+}
+
+.chatTime {
+    width: 5%;
+    color: silver;
+}
+
+.chatUser {
+    white-space: nowrap;
+    color: white;
+    width: max-content;
+
+    &.unknown {
+        color: yellow;
+    }
+    &.bot {
+        color: #FF66AA;
+    }
+    &.left {
+        color: #ed1855;
+    }
+    &.right {
+        color: #1fd0ed;
+    }
+}
+
+.chatBody {
+    color: white;
+	white-space: normal;
+	word-wrap: break-word;
+	overflow: hidden;
+}

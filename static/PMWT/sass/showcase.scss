@@ -1,0 +1,258 @@
+@use "colours";
+
+.showcaseTournamentIcon {
+    right: 220px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    position: absolute;
+
+    .tournament-title {
+        font-family: 'The Meshroom';
+        font-size: 60px;
+        height: 50px;
+        background: -webkit-linear-gradient(#7c53b9, #af86da);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        :after {
+            content: "PMWT";
+            text-shadow: #5336d5 0px 0px 10px;
+        }
+    }
+
+    .tournament-subtitle {
+        font-family: 'PASTI';
+        font-size: 23px;
+        color: white;
+    }
+
+    .tournament-subtitle-winter {
+        font-family: "PASTI";
+        font-size: 18px;
+        background: -webkit-linear-gradient(white, #afcfff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+#showcaseMapInfo {
+    font-family: 'PASTI';
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+
+    p {
+        margin: 5px 10px;
+    }
+
+    div {
+        bottom: -3px;
+        position: absolute;
+    }
+
+    p {
+        overflow-y: hidden;
+        overflow-x: hidden;
+        width: 450px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    img {
+        position: absolute;
+        bottom: 0px;
+        border-radius: 5px;
+        width: 450px;
+        height: 110px !important;
+        object-fit: cover;
+        // add a dim to the image
+        filter: brightness(0.6);
+        transition: all 0.5s ease-in-out;
+    }
+
+
+}
+
+.showcaseMapStats {
+    display: none !important;
+}
+
+#showcaseCurrentModMap {
+
+    font-family: 'PASTI';
+    font-size: 20px;
+    color: black;
+    position: absolute;
+    bottom: 146px;
+    right: -1044px;
+    &.nomod {
+        width: 9%;
+        height: 40%;
+        background-color: white;
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &.hidden{
+        width: 9%;
+        height: 40%;
+        background-color: yellow;
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &.hardrock {
+        width: 9%;
+        height: 40%;
+        background-color: red;
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &.hidden-hardrock {
+        width: 20%;
+        height: 40%;
+        background: linear-gradient(
+            to right,
+            yellow 0%,
+            yellow 50%,
+            red 50%,
+            red 100%
+          );
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &.doubletime {
+        width: 9%;
+        height: 40%;
+        background-color: #c533c4;
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &.hidden-doubletime {
+        width: 9%;
+        height: 40%;
+        background: linear-gradient(
+            to right,
+            yellow 0%,
+            yellow 50%,
+            #c533c4 50%,
+            #c533c4 100%
+          );
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &.freemod{
+        width: 9%;
+        height: 40%;
+        background-color: #1ba078;
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+
+    &.tiebreaker {
+        width: 9%;
+        height: 40%;
+        background-color: #660080;
+        color: black;
+        position: relative;
+        display: flex;
+        font-family: 'PASTI';
+        text-align: center;
+        justify-content: center;
+        font-size: 40px;
+    }
+}
+
+.showcaseClientScene {
+    +.showcaseScene #showcaseMapInfo {
+        font-size: 30px;
+
+        p {
+            width: 800px;
+        }
+
+        img {
+            width: 1000px !important;
+            height: 130px !important;
+            // if 130px is the height to a 450px width, set height if width is 800px
+        }
+
+        .showcaseMapStats {
+            display: flex !important;
+            flex-direction: row;
+            width: 550px;
+            bottom: 0px;
+            left: 400px;
+        }
+    }
+}
+
+.gameplayClientScene.inPlay {
+    +.showcaseScene #showcaseMapInfo {
+
+        p {
+            width: 800px;
+        }
+
+        img {
+            width: 1000px !important;
+            height: 95px !important;
+            // if 130px is the height to a 450px width, set height if width is 800px
+        }
+
+        .showcaseMapStats {
+            display: flex !important;
+            flex-direction: row;
+            width: 550px;
+            bottom: 0px;
+            left: 400px;
+        }
+    }
+}

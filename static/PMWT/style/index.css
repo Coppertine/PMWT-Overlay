@@ -1,0 +1,143 @@
+@font-face {
+  font-family: "The Meshroom";
+  src: local("The Meshroom Regular"), local("TheMeshroom-Regular"), url("../fonts/TheMeshroom-Regular.woff2") format("woff2"), url("../fonts/TheMeshroom-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PASTI";
+  src: local("PASTI Regular"), local("PASTI-Regular"), url("../fonts/PASTI-Regular.woff2") format("woff2"), url("../fonts/PASTI-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PASTI";
+  src: local("PASTI Oblique"), local("PASTI-Oblique"), url("../fonts/PASTI-Oblique.woff2") format("woff2"), url("../fonts/PASTI-Oblique.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+#chatBox {
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: 856px;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 5px 12px;
+  transition: ease-in-out 500ms;
+}
+
+.chatMessage {
+  display: flex;
+  text-align: left;
+  font-family: "PASTI";
+}
+
+.chatTime {
+  width: 5%;
+  color: silver;
+}
+
+.chatUser {
+  white-space: nowrap;
+  color: white;
+  width: max-content;
+}
+.chatUser.unknown {
+  color: yellow;
+}
+.chatUser.bot {
+  color: #FF66AA;
+}
+.chatUser.left {
+  color: #ed1855;
+}
+.chatUser.right {
+  color: #1fd0ed;
+}
+
+.chatBody {
+  color: white;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+  overflow-y: hidden;
+}
+
+.mainScreen {
+  width: 1920px;
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gameplayScene {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.controlPanel {
+  position: absolute;
+  left: 1920px;
+  top: 0px;
+  width: 213px;
+  height: 1080px;
+  background-color: black;
+}
+.controlPanel .btn {
+  appearance: none;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: aqua;
+  border-radius: 30px;
+  width: 150px;
+  color: black;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+  height: 45px;
+  font-family: "PASTI";
+  font-weight: normal;
+  font-style: normal;
+}
+.controlPanel .btn:hover {
+  background-color: black;
+  color: aqua;
+  cursor: pointer;
+}
+.controlPanel .pickBans {
+  display: none;
+}
+
+#particles-js {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  top: 0;
+}
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+  mix-blend-mode: screen;
+}
+
+/*# sourceMappingURL=index.css.map */

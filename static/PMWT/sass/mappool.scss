@@ -1,0 +1,276 @@
+.mappoolScene {
+    position: absolute;
+
+    top: 205px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    overflow-y: scroll;
+    height: 714px;
+
+    .modContainer {
+        // Need to seperate each div into max of 3 columns per row
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1680px;
+
+        .mappoolMapInfo {
+            width: calc(1080px / 2);
+            height: 90px;
+            margin: 5px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+                // add a dim to the image
+                filter: brightness(0.6);
+            }
+
+            div {
+                font-family: 'PASTI';
+                font-size: 20px;
+                color: white;
+                gap: 5px;
+            }
+        }
+
+        &.nomod .mappoolMapInfo::after {
+            width: 20%;
+            height: 40%;
+            background-color: white;
+            color: black;
+            content: "NM";
+            position: relative;
+            display: flex;
+            top: -159px;
+            left: 75%;
+            font-family: 'PASTI';
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        &.hidden .mappoolMapInfo::after {
+            width: 20%;
+            height: 40%;
+            background-color: yellow;
+            color: black;
+            content: "HD";
+            position: relative;
+            display: flex;
+            top: -159px;
+            left: 75%;
+            font-family: 'PASTI';
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        &.hardrock .mappoolMapInfo::after {
+            width: 20%;
+            height: 40%;
+            background-color: red;
+            color: black;
+            content: "HR";
+            position: relative;
+            display: flex;
+            top: -159px;
+            left: 75%;
+            font-family: 'PASTI';
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        &.doubletime .mappoolMapInfo::after {
+            width: 20%;
+            height: 40%;
+            background-color: #c533c4;
+            color: black;
+            content: "DT";
+            position: relative;
+            display: flex;
+            top: -159px;
+            left: 75%;
+            font-family: 'PASTI';
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        &.hidden-doubletime .mappoolMapInfo::after {
+            width: 20%;
+            height: 40%;
+            background: linear-gradient(
+                to right,
+                yellow 0%,
+                yellow 50%,
+                #c533c4 50%,
+                #c533c4 100%
+              );
+            color: black;
+            content: "HDDT";
+            position: relative;
+            display: flex;
+            top: -159px;
+            left: 75%;
+            font-family: 'PASTI';
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+    
+
+        &.freemod .mappoolMapInfo::after {
+            width: 20%;
+            height: 40%;
+            background-color: #1ba078;
+            color: black;
+            content: "FM";
+            position: relative;
+            display: flex;
+            top: -159px;
+            left: 75%;
+            font-family: 'PASTI';
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        &.tiebreaker .mappoolMapInfo::after {
+            width: 20%;
+            height: 40%;
+            background-color: #660080;
+            color: black;
+            content: "TB";
+            position: relative;
+            display: flex;
+            top: -159px;
+            left: 75%;
+            font-family: 'PASTI';
+            text-align: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .ban {
+            img {
+                filter: brightness(0.6) grayscale(100%);
+            }
+
+            .textOverlayContainer::after {
+                content: "BAN";
+                position: absolute;
+                width: 96.5%;
+                height: 50%;
+                left: 0;
+                color: black;
+                z-index: 1;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.red {
+                .textOverlayContainer::after {
+                    background-color: #ed1855;
+                }
+            }
+
+            &.blue {
+                .textOverlayContainer::after {
+                    background-color: #1fd0ed;
+                }
+            }
+        }
+
+        .protecc {
+            img {
+                filter: brightness(0.6) grayscale(100%);
+            }
+
+            .textOverlayContainer::after {
+                content: "PROTECT";
+                position: absolute;
+                width: 96.5%;
+                height: 50%;
+                left: 0;
+                color: black;
+                z-index: 1;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.red {
+                .textOverlayContainer::after {
+                    background-color: #ed1855;
+                }
+            }
+
+            &.blue {
+                .textOverlayContainer::after {
+                    background-color: #1fd0ed;
+                }
+            }
+        }
+
+        .pick {
+            img {
+                filter: brightness(0.6) grayscale(100%);
+            }
+
+            .textOverlayContainer::after {
+                content: "PICK";
+                position: absolute;
+                width: 96.5%;
+                height: 50%;
+                left: 0;
+                color: black;
+                z-index: 1;
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.red {
+                .textOverlayContainer::after {
+                    background-color: #ed1855;
+                }
+            }
+
+            &.blue {
+                .textOverlayContainer::after {
+                    background-color: #1fd0ed;
+                }
+            }
+        }
+        
+        .selected {
+            border: 5px solid #ffffff;
+            border-radius: 10px;
+        }
+
+        
+
+    }
+}
+
+.textOverlayContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: -93px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 10px;
+}

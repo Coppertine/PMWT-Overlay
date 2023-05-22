@@ -1,0 +1,42 @@
+.icon.tournament-icon {
+  width: 250px;
+  height: 250px;
+  display: block;
+  position: absolute;
+}
+.icon.tournament-icon.centre {
+  /* centre to middle of screen */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.icon.tournament-icon:before {
+  content: url(../assets/msuhrom.png);
+  display: block;
+}
+.icon.tournament-icon svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 5%;
+  top: 2%;
+  animation: icon-animate 10s linear infinite;
+  border-radius: 150px;
+}
+
+@keyframes icon-animate {
+  0% {
+    transform: rotate(0deg);
+    stroke-dasharray: 650;
+  }
+  50% {
+    transform: rotate(180deg);
+    stroke-dasharray: 580;
+  }
+  to {
+    transform: rotate(360deg);
+    stroke-dasharray: 650;
+  }
+}
+
+/*# sourceMappingURL=icon.css.map */

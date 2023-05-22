@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PMWT Gosumemory Overlay</title>
+    <script src="lib/countUp.js"></script>
+    <script src="lib/reconnecting-websocket.min.js"></script>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/icon.css">
+    <link rel="stylesheet" href="style/background.css">
+    <link rel="stylesheet" href="style/gameplay.css" type="text/css" />
+    <link rel="stylesheet" href="style/showcase.css">
+    <link rel="stylesheet" href="style/mappool.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+
+</head>
+
+<body>
+    <div class="mainScreen gameplayClientScene">
+        <div class="background">
+            <div class="background-gradient"></div>
+            <div id="particles-js"></div>
+            <div class="icon tournament-icon centre">
+                <svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'>
+                    <rect width='100%' height='100%' fill='none' rx='150' ry='150' stroke='#6631A6FF' stroke-width='10'
+                        stroke-dashoffset='0' stroke-linecap='butt' />
+                </svg>
+            </div>
+            <p></p>
+        </div>
+        <div class="mappoolScene">
+            <!-- <div class="modContainer nomod">
+                <div class="mappoolMapInfo" id="1879989">
+                    <img src="https://assets.ppy.sh/beatmaps/1879989/covers/card@2x.jpg?1669345975">
+                    <div class="textOverlayContainer">
+                        <div class="mappoolMapName">TestSong [Export]</div>
+                        <div class="mappoolMapArtist">Coppertine</div>
+                        <div class="mappoolMapMapper">Coppertine</div>
+                    </div>
+                </div>
+                <div class="mappoolMapInfo used" id="2586715">
+                    <img src="https://assets.ppy.sh/beatmaps/1244367/covers/card@2x.jpg?1670316203">
+                    <div class="textOverlayContainer">
+                        <div class="mappoolMapName">TestSong [Export]</div>
+                        <div class="mappoolMapArtist">Coppertine</div>
+                        <div class="mappoolMapMapper">Coppertine</div>
+                    </div>
+                </div>
+                <div class="mappoolMapInfo" id="1879989">
+                    <img src="https://assets.ppy.sh/beatmaps/1879989/covers/card@2x.jpg?1669345975">
+                    <div class="textOverlayContainer">
+                        <div class="mappoolMapName">TestSong [Export]</div>
+                        <div class="mappoolMapArtist">Coppertine</div>
+                        <div class="mappoolMapMapper">Coppertine</div>
+                    </div>
+                </div>
+                <div class="mappoolMapInfo" id="1879989">
+                    <img src="https://assets.ppy.sh/beatmaps/1879989/covers/card@2x.jpg?1669345975">
+                    <div class="textOverlayContainer">
+                        <div class="mappoolMapName">TestSong [Export]</div>
+                        <div class="mappoolMapArtist">Coppertine</div>
+                        <div class="mappoolMapMapper">Coppertine</div>
+                    </div>
+                </div>
+            </div> -->
+            
+        </div>
+        <div class="gameplayScene">
+            <div id="topSection">
+                <div class="teamsDisplay">
+                    <div class="redTeam">
+                        <img class="teamIcon" id="teamRedIcon">
+                        <div class="teamName" id="teamRedName"></div>
+                        <div class="teamStars" id="teamRedStars"></div>
+                    </div>
+                    <div class="blueTeam">
+                        <img class="teamIcon" id="teamBlueIcon">
+                        <div class="teamName" id="teamBlueName"></div>
+                        <div class="teamStars" id="teamBlueStars"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="bottomSection">
+                <div id="movingScoreBars">
+                    <div class="movingScoreBar" id="movingScoreBarRed"></div>
+                    <div class="movingScoreBar" id="movingScoreBarBlue"></div>
+                </div>
+                <div id="playScores">
+                    <div class="playScore" id="playScoreRed"></div>
+                    <div class="playScore" id="playScoreBlue"></div>
+                </div>
+            </div>
+        </div>
+        <div id="chatBox"></div>
+    </div>
+    <div class="showcaseScene">
+        <div id="showcaseMapInfo">
+            <img src="https://assets.ppy.sh/beatmaps/1879989/covers/card.jpg?1669345975">
+            <div>
+                <p class="showcaseMapName">Test Song</p>
+                <p class="showcaseMapArtist">Artist: Coppertine</p>
+                <p class="showcaseMapMapper">Mapper: Coppertine</p>
+            </div>
+            <div class="showcaseMapStats">
+                <p class="showcaseMapAR"></p>
+                <p class="showcaseMapCS"></p>
+                <p class="showcaseMapOD"></p>
+                <p class="showcaseMapLength"></p>
+                <p class="showcaseMapSR"></p>
+                <p class="showcaseMapBPM"></p>
+            </div>
+        </div>
+        <div id="showcaseCurrentModMap"></div>
+        <div id="twitchChatBox">
+            <ul></ul>
+        </div>
+        <div class="showcaseTournamentIcon">
+            <span class="tournament-title">PMWT</span>
+            <span class="tournament-subtitle">PSYCHEDELICMUSH'S</span>
+            <span class="tournament-subtitle-winter">WINTER TOURNAMENT</span>
+        </div>
+    </div>
+    <div class="controlPanel">
+        <button id="btnMappool" class="btn" onclick="toggleMapPoolDisplay()">Toggle Mappool Display</button>
+        <div class="pickBans">
+            <select size="7">
+                <option id="redProtecc">Red Protect</option>
+                <option id="blueProtecc">Blue Protect</option>
+                <option id="redBan">Red Ban</option>
+                <option id="blueBan">Blue Ban</option>
+                <option id="redPick">Red Pick</option>
+                <option id="bluePick">Blue Pick</option>
+                <option id="removeSelection">Remove Selection</option>
+            </select>
+        </div>
+    </div>
+    <script src="lib/api.js"></script>
+    <script src="lib/components/mappool.js"></script>
+
+    <script src="lib/index.js"></script>
+    <script src="lib/particles.js"></script>
+    <script src="lib/background.js"></script>
+</body>
+
+</html>

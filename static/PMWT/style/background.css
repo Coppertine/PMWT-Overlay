@@ -1,0 +1,106 @@
+.background {
+  height: 100%;
+  width: 100%;
+  clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 50%, 100% 50%, 100% 50%, 0% 50%, 0% 100%, 100% 100%, 100% 0%);
+  transition: clip-path 0.5s ease-in-out;
+}
+.background .background-gradient {
+  background: radial-gradient(ellipse 100% var(--gradientHeight) at 50% 120%, #221c3b, #171717);
+  width: 100%;
+  filter: blur(50px);
+  transform: scale(1.5);
+  height: 100%;
+  animation: gradient-animation 5s alternate infinite;
+}
+.background p {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size: 50px;
+  color: white;
+  font-family: "PASTI";
+  font-weight: normal;
+  font-style: normal;
+}
+
+.gameplayClientScene .background {
+  clip-path: polygon(0% 0%, 0% 100%, 0% 100%, 0% 18.5%, 100% 18.5%, 100% 85%, 0% 85%, 0% 100%, 100% 100%, 100% 0%);
+  transition: clip-path 0.5s ease-in-out;
+}
+.gameplayClientScene .showcaseScene {
+  display: none !important;
+}
+
+.showcaseClientScene .background {
+  clip-path: polygon(0 0, 0 1600px, 0 1600px, 0 0, 1600px 0%, 1600px 900px, 0% 900px, 0% 1600px, 100% 100%, 100% 0%);
+  transition: clip-path 0.5s ease-in-out;
+}
+.showcaseClientScene .gameplayScene {
+  display: none;
+}
+.showcaseClientScene + .showcaseScene #twitchChatBox {
+  position: absolute;
+  left: 1580px;
+  top: 30px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.showcaseClientScene + .showcaseScene #twitchChatBox li {
+  background-color: hsl(196deg, 58%, 93%);
+  box-sizing: border-box;
+  padding: 1rem 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-family: "PASTI";
+}
+.showcaseClientScene + .showcaseScene #twitchChatBox li :last-of-type {
+  animation-name: slide-in-left;
+  animation-duration: 0.15s;
+  animation-timing-function: ease-in;
+}
+.showcaseClientScene + .showcaseScene #twitchChatBox ul {
+  list-style-type: none;
+  list-style-position: outside;
+}
+.showcaseClientScene + .showcaseScene #twitchChatBox ::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes gradient-animation {
+  from {
+    --gradientHeight: 80%;
+  }
+  to {
+    --gradientHeight: 100%;
+  }
+}
+@property --gradientHeight {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 80%;
+}
+@property --maskTop {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 19%;
+}
+@property --maskBottom {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 85%;
+}
+
+/*# sourceMappingURL=background.css.map */
