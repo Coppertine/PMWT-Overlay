@@ -1,12 +1,12 @@
 PMWT Steaming Overlay
------------------------
+====
 Designed by cloudical / Coppertine
 
 Developed by Coppertine using parts from lil onion, Hoaq and VictimCrasher's overlays.
 
 
 Setup
-=======
+----
 
 Create a profile on OBS Studio (optimised for streaming, using base of 1080p and using the stream key in #streamers) 
 Import the PMWT.json file in Scene Collection -> Import.
@@ -19,7 +19,7 @@ In gosumemory folder, start the gosumemory.exe (if not downloaded, download from
 
 
 Navigation
-==========
+----
 A lot of the scenes will be controlled from the OBS scenes on the left and are mostly self explanitory, however there are no timers in this overlay.
 (cuz lazy)
 
@@ -30,14 +30,14 @@ A lot of the scenes will be controlled from the OBS scenes on the left and are m
 
 
 Building
-=========
+----
 If you want to modify any style files, please modify files in the `sass/` folder and run.
 `sass --watch sass:style`
 
 The web application is built with gosumemory / obs chromium browser in mind and everything seen is rendered in the browser (no videos).
 
 Commands
-========
+----
 gosumemory listens to commands on the multiplayer lobby chat from the referee (player without a team assigned) that has a prefix: `!pmwt`
 | Command | Description | Example |
 | --- | --- | --- |
@@ -46,6 +46,6 @@ gosumemory listens to commands on the multiplayer lobby chat from the referee (p
 | `!pmwt protecc [id] [red/blue]` | Protects a spesific map by `id` by the team. | `!pmwt protecc 12345 red` |
 
 Twitch Chat
-======
+----
 gosumemory listens to the twitch chat using https://github.com/instafluff/ComfyJS to display chat onto the Showcase scene.
 The functionality is scuffed and could be improved. This can also have the ability to allow gosumemory serve as a twitch chatbot for spesific commands in the future / by someone elses implementation.
