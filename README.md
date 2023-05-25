@@ -5,10 +5,15 @@ Designed by cloudical / Coppertine
 Developed by Coppertine using parts from lil onion, Hoaq and VictimCrasher's overlays.
 
 
+Preview
+===
+https://github.com/Coppertine/PMWT-Overlay/assets/37494321/984458d6-4004-43ee-ae6b-180b2263773f
+
+
 Setup
 =======
 
-Create a profile on OBS Studio (optimised for streaming, using base of 1080p and using the stream key in #streamers) 
+Create a profile on OBS Studio (optimised for streaming, using base of 1080p, 60fps) 
 Import the PMWT.json file in Scene Collection -> Import.
 Go to Edit -> Advanced Audio Properties and set the Audio Monitoring section for "osu! Audio" and "Tourney Audio" to "Monitor and Output"
 
